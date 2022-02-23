@@ -117,11 +117,94 @@ void editRoster::addEmployeeToRoster(){
         std::cout << "Last name: ";
         std::cin >> lastName;
         std::string fullName = firstName + " " + lastName;
-
         clearBuffer();
+
+        bool repeatTitle = true;
         std::string getTitle;
-        std::cout << "Please enter new employee job title: ";
-        std::getline(std::cin, getTitle);
+        std::string getDep;
+        while(repeatTitle){
+            std::cout << "CURRENT DEPARTMENT LIST: \nEXECUTIVE DEPARTMENT \nADMINISTRATION DEPARTMENT\nOPERATIONS DEPARTMENT\nLEGAL DEPARTMENT\nCUSTOMER SERVICE DEPARTMENT" << std::endl;
+            std::cout << "Please select department: ";
+            std::getline(std::cin, getDep);
+
+
+            if(stringToUpper(getDep) == "EXECUTIVE" || stringToUpper(getDep) == "EXECUTIVE DEPARTMENT" ){
+                std::cout << "CURRENT JOB TITLE LIST: CEO, CFO, CIO" << std::endl;
+                std::cout << "Please select job title: ";
+                std::getline(std::cin, getTitle);
+
+                if(stringToUpper(getTitle) == "CEO" || stringToUpper(getTitle) == "CFO" || stringToUpper(getTitle) == "CIO"){
+                    jobTitle = conversionToENUM(stringToUpper(getTitle));
+                    repeatTitle = false;
+                }
+                else{
+                    std::cout << "Please try again." << std::endl;
+                    clearBuffer();
+                }
+            
+            }
+            if(stringToUpper(getDep) == "ADMINISTRATION" || stringToUpper(getDep) == "ADMINISTRATION DEPARTMENT" || stringToUpper(getDep) == "ADMIN" ){
+                std::cout << "CURRENT JOB TITLE LIST: HR MANAGER, HR SUPERVISOR, HR ASSISTANT" << std::endl;
+                std::cout << "Please select job title: ";
+                std::getline(std::cin, getTitle);
+
+                if(stringToUpper(getTitle) == "HR MANAGER" || stringToUpper(getTitle) == "HR SUPERVISOR" || stringToUpper(getTitle) == "HR ASSISTANT"){
+                    jobTitle = conversionToENUM(stringToUpper(getTitle));
+                    repeatTitle = false;
+                }
+                else{
+                    std::cout << "Please try again." << std::endl;
+                    clearBuffer();
+                }
+            
+            }
+            if(stringToUpper(getDep) == "OPERATIONS" || stringToUpper(getDep) == "OPERATIONS DEPARTMENT" ){
+                std::cout << "CURRENT JOB TITLE LIST: OPERATIONS MANAGER, OPERATIONS SUPERVISOR, OPERATIONS ASSOCIATE" << std::endl;
+                std::cout << "Please select job title: ";
+                std::getline(std::cin, getTitle);
+
+                if(stringToUpper(getTitle) == "OPERATIONS MANAGER" || stringToUpper(getTitle) == "OPERATIONS SUPERVISOR" || stringToUpper(getTitle) == "OPERATIONS ASSOCIATE"){
+                    jobTitle = conversionToENUM(stringToUpper(getTitle));
+                    repeatTitle = false;
+                }
+                else{
+                    std::cout << "Please try again." << std::endl;
+                    clearBuffer();
+                }
+            
+            }
+            if(stringToUpper(getDep) == "LEGAL" || stringToUpper(getDep) == "LEGAL DEPARTMENT" ){
+                std::cout << "CURRENT JOB TITLE LIST: LAWYER, LITIGATOR, LAW CLERK" << std::endl;
+                std::cout << "Please select job title: ";
+                std::getline(std::cin, getTitle);
+
+                if(stringToUpper(getTitle) == "LAWYER" || stringToUpper(getTitle) == "LITIGATOR" || stringToUpper(getTitle) == "LAW CLERK"){
+                    jobTitle = conversionToENUM(stringToUpper(getTitle));
+                    repeatTitle = false;
+                }
+                else{
+                    std::cout << "Please try again." << std::endl;
+                    clearBuffer();
+                }
+            
+            }
+            if(stringToUpper(getDep) == "CUSTOMER SERVICE" || stringToUpper(getDep) == "CUSTOMER SERVICE DEPARTMENT" ){
+                std::cout << "CURRENT JOB TITLE LIST: CUSTOMER SERVICE MANAGER, CUSTOMER SERVICE SUPERVISOR, CUSTOMER SERVICE" << std::endl;
+                std::cout << "Please select job title: ";
+                std::getline(std::cin, getTitle);
+
+                if(stringToUpper(getTitle) == "CUSTOMER SERVICE MANAGER" || stringToUpper(getTitle) == "CUSTOMER SERVICE SUPERVISOR" || stringToUpper(getTitle) == "CUSTOMER SERVICE"){
+                    jobTitle = conversionToENUM(stringToUpper(getTitle));
+                    repeatTitle = false;
+                }
+                else{
+                    std::cout << "Please try again. \n" << std::endl;
+                    clearBuffer();
+                }
+            
+            }
+        }
+        
         jobTitle = conversionToENUM(stringToUpper(getTitle));
 
         std::cout << "Please enter new employee salary: $";
