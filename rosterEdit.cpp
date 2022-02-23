@@ -108,35 +108,58 @@ void editRoster::addEmployeeToRoster(){
     companyPosition jobTitle;
     int salary;
     std::string phoneNumber;
+    bool repeat = true;
 
-    std::cout << "Please enter name of new employee" << std::endl 
-            << "First name: ";
-    std::cin >> firstName;
-    std::cout << "Last name: ";
-    std::cin >> lastName;
+    while(repeat){
+        std::cout << "Please enter name of new employee" << std::endl 
+                << "First name: ";
+        std::cin >> firstName;
+        std::cout << "Last name: ";
+        std::cin >> lastName;
+        std::string fullName = firstName + " " + lastName;
 
-    clearBuffer();
-    std::string getTitle;
-    std::cout << "Please enter new employee job title: ";
-    std::getline(std::cin, getTitle);
-    jobTitle = conversionToENUM(getTitle);
+        clearBuffer();
+        std::string getTitle;
+        std::cout << "Please enter new employee job title: ";
+        std::getline(std::cin, getTitle);
+        jobTitle = conversionToENUM(stringToUpper(getTitle));
 
-    std::cout << "Please enter new employee salary: $";
-    std::cin >> salary;
+        std::cout << "Please enter new employee salary: $";
+        std::cin >> salary;
 
-    std::cout << "Please enter new employee phone number: ";
-    std::cin >> phoneNumber;
+        std::cout << "Please enter new employee phone number: ";
+        std::cin >> phoneNumber;
 
-    std::string fullName = firstName + " " + lastName;
 
-    int newEmployeeNumber = rosterCounter + 1;
-    for(int i = 0; i < rosterCounter; i++){
-        if(employeeRosterArray[i]->getEmployeeID() == newEmployeeNumber){
-            newEmployeeNumber++;
+
+        int newEmployeeNumber = rosterCounter + 1;
+        for(int i = 0; i < rosterCounter; i++){
+            if(employeeRosterArray[i]->getEmployeeID() == newEmployeeNumber){
+                newEmployeeNumber++;
+            }
+        }
+
+        bool repeatAddtoRosterAnswer = true;
+        std::string answer;
+        while(repeatAddtoRosterAnswer){
+            std::cout << "Do you wish to continue adding this employee to roster?: ";
+            std::cin >> answer;
+
+            if(stringToUpper(answer) == "YES"){
+                add(newEmployeeNumber, fullName, jobTitle, salary, phoneNumber);
+                repeatAddtoRosterAnswer = false;
+                repeat = false;
+            }
+            else if(stringToUpper(answer) == "NO"){
+                clearBuffer();
+                repeatAddtoRosterAnswer = false;
+            }
+            else{
+                std::cout << "Please try again. Answer with yes or no: " << std::endl;
+                clearBuffer();
+            }
         }
     }
-    add(newEmployeeNumber, fullName, jobTitle, salary, phoneNumber);
-
 }
 
 void editRoster::DeleteEmployeeFromRoster(){
@@ -165,5 +188,4 @@ void editRoster::DeleteEmployeeFromRoster(){
             index++;
         }
     }
-
 }
