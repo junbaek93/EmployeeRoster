@@ -5,6 +5,8 @@
 #include "roster.h"
 #include "jobPostiton.h"
 
+
+
 class editRoster{
     public:
         int rosterCounter = 0;
@@ -92,6 +94,7 @@ class editRoster{
             else if(conversionInput == LAW_CLERK)
                 return "LAW CLERK";        
         }
+
 };
 
 #endif

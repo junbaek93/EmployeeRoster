@@ -205,10 +205,9 @@ void editRoster::addEmployeeToRoster(){
             }
         }
         
-        jobTitle = conversionToENUM(stringToUpper(getTitle));
-
-        std::cout << "Please enter new employee salary: $";
+        std::cout << "Please enter new employee hourly pay: $";
         std::cin >> salary;
+        
 
         std::cout << "Please enter new employee phone number: ";
         std::cin >> phoneNumber;

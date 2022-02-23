@@ -1,9 +1,9 @@
-1,Harry Potter,CEO,200000,594-402-1234
-2,Ronald Weasley,CIO,200000,124-567-2322
-3,Hermione Granger,CFO,187000,167-231-5678
-4,Remus Lupin,Operations Manager,109000,609-423-4515
-5,Rebeus Hagrid,HR Manager,98000,600-605-4232
-6,Draco Malfoy,Customer Service Manager,89000,923-506-4232
-7,Lucius Malfoy,Lawyer,190000,123-520-3295
+1,Harry Potter,CEO,320,594-402-1234
+2,Ronald Weasley,CIO,255,124-567-2322
+3,Hermione Granger,CFO,187,167-231-5678
+4,Remus Lupin,Operations Manager,55,609-423-4515
+5,Rebeus Hagrid,HR Manager,35,600-605-4232
+6,Draco Malfoy,Customer Service Manager,40,923-506-4232
+7,Lucius Malfoy,Lawyer,190,123-520-3295
 8,Dolores Umbridge,Customer Service,25,505-523-5232
 9,Luna Lovegood,Customer Service,27,231-523-6996

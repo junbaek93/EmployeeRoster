@@ -38,7 +38,7 @@ void employeeRoster::setJobTitle(companyPosition jobTitle){
 }
 
 void employeeRoster::setSalary(int salary){
-    this-> Salary = salary;
+    this-> Salary = checkSalary(salary);
 }
 
 void employeeRoster::setPhoneNumber(std::string phoneNumber){
@@ -62,7 +62,14 @@ std::string employeeRoster::getPhoneNumber() const{
 }
 
 void employeeRoster::print(){
-    std::cout << "EMPLOYEE NUMBER: " << std::left << std::setw(5) << getEmployeeID() << "EMPLOYEE NAME: " << std::left << std::setw(18) << getEmployeeName() << "JOB TITLE: " << std::left << std::setw(30) << companyConversion(getJobTitle()) << "SALARY: $" << std::left << std::setw(10) << getSalary() << "EMPLOYEE PHONE NUMBER: #" << getPhoneNumber() <<  std::endl;
+    std::cout << "EMPLOYEE NUMBER: " << std::left << std::setw(5) << getEmployeeID() << "EMPLOYEE NAME: " << std::left << std::setw(18) << getEmployeeName() << "JOB TITLE: " << std::left << std::setw(30) << companyConversion(getJobTitle());
+    if (getSalary() > 30){
+        std::cout << "SALARY: $" << std::left << std::setw(10) << getSalary();
+    }
+    else{
+        std::cout << "HOURLY: $" << std::left << std::setw(10) << getSalary();
+    }
+    std::cout << "EMPLOYEE PHONE NUMBER: #" << getPhoneNumber() <<  std::endl;
 }
 
 std::string companyConversion (companyPosition conversionInput){

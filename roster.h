@@ -4,6 +4,10 @@
 #include <vector>
 #include "jobPostiton.h"
 
+class checkSalary{
+    void ifSalary();
+};
+
 class employeeRoster{
 
     public:
@@ -25,12 +29,20 @@ class employeeRoster{
         employeeRoster(int ID, std::string NAME, companyPosition TITLE, int SALARY, std::string PHONE);
         ~employeeRoster();
 
+        int checkSalary(int check){
+            if(check > 30){
+                check = check * (8 * (260-25));
+            }
+            return check;
+        }
+
     private:
         //Variables used to input pointer objects
         int Id;
         std::string Name;
         companyPosition Title;
         int Salary;
+        int check;
         std::string PhoneNumber;
 
 };
